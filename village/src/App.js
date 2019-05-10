@@ -25,8 +25,12 @@ class App extends Component {
       })
 
   }
-  handleChange = e => {
-    this.setState({smurfs: e})
+  addSmurf = (data) => {
+    axios.post('http://localhost:3333/smurfs', data)
+    .then(response => {console.log(response)
+      this.setState({ smurfs: response.data })
+    })
+    .catch(err => console.log(err))
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
   // Notice what your map function is looping over and returning inside of Smurfs.
@@ -34,12 +38,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="Navbar">
-        <NavLink exact to={"/"} ><span>HOME</span></NavLink>
-        <NavLink to={"/form"} ><span>FORM</span></NavLink>
-        </div>
-        <Route path="/form"   render={props => (<SmurfForm {...props} handleChange={this.handleChange} smurfs={this.state.smurfs} />) } />
-        <Route exact path="/" render={props => (<Smurfs {...props} smurfs={this.state.smurfs} />)}/>
+       <Route exact path='/smurfs' render={() => <SmurfForm addSmurf={this.addSmurf}/>} />
+        <Route exact path='/' component={Smurfs} />
+        <Route path='/smurfs' render={() => <Smurfs smurfs={this.state.smurfs} />} />
+        
       </div>
     );
   }
