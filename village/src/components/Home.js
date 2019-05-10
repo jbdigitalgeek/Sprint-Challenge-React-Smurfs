@@ -5,7 +5,7 @@ const Home = () => {
         <div>
 
             <div>
-                <img src='https://www.topbestalternatives.com/wp-content/uploads/2017/11/smurfs-village.jpg' alt='whatevs' />
+                <img src='https://www.topbestalternatives.com/wp-content/uploads/2017/11/smurfs-village.jpg' alt='smurfvillage' />
             </div>
 
         </div>
