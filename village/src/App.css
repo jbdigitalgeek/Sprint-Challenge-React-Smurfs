@@ -1,3 +1,22 @@
 .App {
   text-align: center;
+  background: paleturquoise
+}
+.Smurf {
+  width: 500px;
+  margin: 10px auto;
+  color: black;
+  border: 8px double dodgerblue;
+  border-radius: 12px;
+ 
+}
+
+.badguys {
+  /* max-width: 200px; */
+  margin: 0 auto;
+}
+
+img {
+
+  width: 500px;
 }
